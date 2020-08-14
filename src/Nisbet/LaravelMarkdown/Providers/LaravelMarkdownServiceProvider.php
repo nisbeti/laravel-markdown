@@ -3,26 +3,10 @@
 namespace Nisbet\LaravelMarkdown\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Contracts\Support\DeferrableProvider;
 
-class LaravelMarkdownServiceProvider extends ServiceProvider
+class LaravelMarkdownServiceProvider extends ServiceProvider implements DeferrableProvider
 {
-    /**
-     * Indicates if loading of the provider is deferred.
-     *
-     * @var bool
-     */
-    protected $defer = true;
-
-    /**
-     * Get the services provided by the provider.
-     *
-     * @return array
-     */
-    public function provides()
-    {
-        return ['laravelMarkdown'];
-    }
-
     /**
      * Perform post-registration booting of services.
      *
